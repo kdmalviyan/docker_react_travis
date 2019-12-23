@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Hi There this msg from nginx.... The value is changeds
+          Yahoo! I am deployed on AWS trhough automated pipeline with travis.
         </p>
         <a
           className="App-link"

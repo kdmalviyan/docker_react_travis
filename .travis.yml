@@ -17,5 +17,5 @@ deploy:
     bucket_path: "docker-react-travis"
     on:
         branch: master
-    access_key_id: "AKIA4FPAYRFWO56LP4XJ"
-    secret_access_key: "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"
+    access_key_id: "$access_key_id"
+    secret_access_key: "$secret_access_key"

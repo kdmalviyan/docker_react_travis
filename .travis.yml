@@ -3,19 +3,19 @@ services:
     - docker
 
 before_install:
-    - docker build -t kdmalviyan/react_docker -f Dockerfile.dev .
+    - docker build -t kdmalviyan/docker-react-travis -f Dockerfile.dev .
 
 script:
-    - docker run -e CI=true kdmalviyan/react_docker npm run test
+    - docker run -e CI=true kdmalviyan/docker-react-travis npm run test
     
-#deploy:
-#    provider: elasticbeanstalk
-#    region: "us-east-2"
-#    app: "docker_react"
-#    env: "DockerReact-env"
-#    bucket_name: "elasticbeanstalk-us-east-2-836379380076"
-#    bucket_path: "docker_react"
-#    on:
-#        branch: master
-#    access_key_id: "$access_key_id"
-#    secret_access_key: "$secret_access_key"
+deploy:
+    provider: elasticbeanstalk
+    region: "us-east-2"
+    app: "docker-react-travis"
+    env: "DockerReactTravis-env"
+    bucket_name: "elasticbeanstalk-us-east-2-836379380076"
+    bucket_path: "docker-react-travis"
+    on:
+        branch: master
+    access_key_id: "$access_key_id"
+    secret_access_key: "$secret_access_key"
